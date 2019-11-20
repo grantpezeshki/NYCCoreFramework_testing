@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src=./jquery-3.4.1.min.js></script>
+    <script src=./typeahead.bundle.min.js></script>
+
+    <title>typeahead experiments</title>
+
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;
+      }
+      #custom-templates .empty-message {
+        padding: 5px 10px;
+        text-align: center;
+        }
+    </style>
+  </head>
+
+  <body>
+    <h1>typeahead tests</h1>
+
+    <p>.</p>
+    <div id="the-basics">
+        <input class="typeahead" type="text" placeholder="Dogs of USA">
+      </div>
+
+    <p>with bloodhound</p>
+    <div id="bloodhound">
+        <input class="typeahead" type="text" placeholder="Dog List with Counts">
+      </div>
+
+    <p>Custom Template</p>
+    <div id="custom-templates">
+        <input class="typeahead" type="text" placeholder="Oscar winners for Best Picture">
+      </div>
+
+    <script src=./main.js>
+      // Your JavaScript goes here
+      
+    </script>
+  </body>
+</html>
