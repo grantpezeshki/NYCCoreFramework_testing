@@ -1,0 +1,14 @@
+{
+  "name": "@grantpezeshki/simplified-barmap",
+  "main": "6e041fb9973b3d33@455.js",
+  "version": "455.0.0",
+  "homepage": "https://observablehq.com/@grantpezeshki/simplified-barmap",
+  "author": {
+    "name": "Grant Pezeshki",
+    "url": "https://observablehq.com/@grantpezeshki"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}

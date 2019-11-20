@@ -1,0 +1,14 @@
+{
+  "name": "@grantpezeshki/testing-common-dataset-for-map-and-bar-with-vega-lite",
+  "main": "427650ec7640b540@426.js",
+  "version": "426.0.0",
+  "homepage": "https://observablehq.com/@grantpezeshki/testing-common-dataset-for-map-and-bar-with-vega-lite",
+  "author": {
+    "name": "Grant Pezeshki",
+    "url": "https://observablehq.com/@grantpezeshki"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}
