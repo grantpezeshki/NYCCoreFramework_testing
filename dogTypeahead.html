@@ -4,9 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Creating Twitter Typeahead using Local Data</title>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="/dogTypeahead/jquery-3.4.1.min.js"></script>
-<script  type="text/javascript" src="/dogTypeahead/typeahead.bundle.min.js"></script>
+<script type="text/javascript" src="/dogTypeahead/typeahead.bundle.min.js"></script>
 <script type="text/javascript">
+
+    let dogs3 = [];
+    d3.csv("./dogTypeahead/PopularDogNames_Licensed2018v3_bothSexes.csv").then(function(data) {
+        //console.log(data); // [{"Hello": "world"}, …]
+        dogs3=data;
+        console.log(dogs3);
+        });  
+        </script>
+<script type="text/javascript">
+    
 $(document).ready(function(){
     // Defining the local dataset
     var cars = ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen'];
@@ -41,13 +53,15 @@ $(document).ready(function(){
                     "nameCount": 230
                 }
                 ]
-    console.log(dogs2);
+    //console.log(dogs2);
+    
+    console.log(dogs3);
 
     // Constructing the suggestion engine
     var dogSuggestions = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('dogName'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        local: dogs2
+        local: dogs3
     });
     
     // Initializing the typeahead
