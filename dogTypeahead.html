@@ -11,7 +11,7 @@ $(document).ready(function(){
     // Defining the local dataset
     var cars = ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen'];
     var dogs = ['Bella','Max','Fido','Rex','Bailey','Samwise'];
-    console.log(dogs);
+    //console.log(dogs);
     var dogs2 = [{
                     "dogName": "BELLA",
                     "nameCount": 1300
@@ -63,9 +63,21 @@ $(document).ready(function(){
     });
 console.log(document.querySelector("body > div > span > input.typeahead.tt-query.tt-input").value);
 let selectedName = document.querySelector("body > div > span > input.typeahead.tt-query.tt-input").value;
+console.log('poop');
 console.log(selectedName);
+var myVal = $('.typeahead').typeahead('selectedName');
+console.log(myVal);
 
-});  
+
+$('.selector').typeahead({
+    name: 'identifier',
+    local: dogs2
+}).on('typeahead:select', function (obj, datum) {
+    console.log(obj);
+    console.log(datum);
+});
+});
+  
 
 
 </script>
@@ -122,7 +134,7 @@ console.log(selectedName);
 </head>
 <body>
     <div class="bs-example">
-		<h2>Type your favorite car name</h2>
+		<h2>Type your favorite dog name</h2>
         <input type="text" class="typeahead tt-query" autocomplete="off" spellcheck="false">
     </div>
     <br>
