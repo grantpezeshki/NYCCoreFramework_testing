@@ -61,21 +61,26 @@ $(document).ready(function(){
         display: 'dogName',
         source: dogSuggestions
     });
-console.log(document.querySelector("body > div > span > input.typeahead.tt-query.tt-input").value);
-let selectedName = document.querySelector("body > div > span > input.typeahead.tt-query.tt-input").value;
-console.log('poop');
-console.log(selectedName);
-var myVal = $('.typeahead').typeahead('selectedName');
-console.log(myVal);
 
-
-$('.selector').typeahead({
-    name: 'identifier',
-    local: dogs2
-}).on('typeahead:select', function (obj, datum) {
-    console.log(obj);
-    console.log(datum);
+// Binding the users selection to the html
+$('.typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.dogName +' '+ suggestion.nameCount);
+  document.querySelector("#selectedDogName").innerHTML = suggestion.dogName;
+  document.querySelector("#selectedDogCount").innerHTML = suggestion.nameCount;
 });
+// Binding the users selection to the html
+$('.typeahead').bind('typeahead:autocomplete', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.dogName +' '+ suggestion.nameCount);
+  document.querySelector("#selectedDogName").innerHTML = suggestion.dogName;
+  document.querySelector("#selectedDogCount").innerHTML = suggestion.nameCount;
+});
+// Binding the users selection to the html
+$('.typeahead').bind('typeahead:cursorchange', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.dogName +' '+ suggestion.nameCount);
+  document.querySelector("#selectedDogName").innerHTML = suggestion.dogName;
+  document.querySelector("#selectedDogCount").innerHTML = suggestion.nameCount;
+});
+
 });
   
 
@@ -86,6 +91,13 @@ $('.selector').typeahead({
 	font-family: sans-serif;
 	position: relative;
 	margin: 100px;
+}
+.answer-name {
+    font-size: 28px;
+}
+.answer-count {
+    font-size: 32px;
+    font-weight: bold
 }
 .typeahead, .tt-query, .tt-hint {
 	border: 2px solid #CCCCCC;
@@ -136,8 +148,10 @@ $('.selector').typeahead({
     <div class="bs-example">
 		<h2>Type your favorite dog name</h2>
         <input type="text" class="typeahead tt-query" autocomplete="off" spellcheck="false">
-    </div>
-    <br>
-    <div id=selectionName></div>
+        <br>
+        <br>
+        <br>
+        <div class=answer-name id=selectedDogName>-</div>
+        <div class=answer-count id=selectedDogCount>-</div>
 </body>
 </html>                             
