@@ -11,14 +11,19 @@
     <!-- Corrects IE Compatibility Mode -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Article Single Column • NYC Core Framework</title>
+    <title>Licensed Dogs Data from 2018: lookup name counts</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="./fontawesome/css/all.min.css">
 
     <!-- NYC Theme CSS -->
     <link rel="stylesheet" href="./css/theme.css">
-
+	
+    <script src="./dogTypeahead/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./dogTypeahead/typeahead.bundle.min.js"></script>
+    
+    <script defer type="text/javascript" src="./dogTypeahead/dogs.js"></script>
+    
 </head>
 
 <body>
@@ -280,7 +285,12 @@
 
                 <div class="narrow my-4">
 
-                    <h2>Lorem ipsum dolor sit amet</h2>
+                    <h2>See how many licensed dogs in New York City share your dog's name.</h2>
+                    <input type="text" class="typeahead tt-query" autocomplete="off" spellcheck="false">
+                    <br>
+                    <div class=answer-name id=selectedDogName>Dog's Name</div>
+                    <div class=answer-count id=selectedDogCount>Count of Licensed Dogs</div>
+                    <br>
 
                     <p>
                         Malesuada dapibus ac condimentum habitasse a praesent commodo penatibus parturient duis pretium
